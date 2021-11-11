@@ -1,0 +1,220 @@
+﻿/* CSS PARA MANEJO DE GRID VIEW DENTRO DE DIV Y GENERALMENTE SIN PAGINACIÓN*/
+.GvDelInfo
+{
+  width:100%;
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+}
+
+/*Estableciendo el Css para el header 
+  -bordes superiores e inferiores del mismo color de fondo
+  -bordes derecho más obscuro que izquierdo */
+.GvDelInfo th
+{  
+  padding: 4px 0px 4px 4px;
+  color: #dcdcdc ; 
+  background: #37282e; 
+  border-top: solid 1px #4d4d4d;
+  border-bottom: solid 1px #4d4d4d;  
+  border-right: solid 1px #6a6969;   
+  border-left: solid 1px #6a6969;   
+  font-size: 12px; 
+  text-align:left;  
+ }
+
+.GvDelInfo tr.TrImparGvDelInfo
+{
+	background-color: #e3e3e3 ; 
+ }
+.GvDelInfo tr.TrParGvDelInfo
+{
+	background-color:#f1f1f1;
+	}      
+.GvDelInfo td
+{ 
+	border: solid 1px #c1c1c1; 
+	color: #000000;
+	height: 18px;
+}
+
+/*Para la paginación*/
+.GvDelInfo .PagerMttoInDv
+{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma'; 
+  font-size: 15px;    
+  background-color:#e8e8e8 ;   
+  width:100%;      
+}
+
+/* CSS PARA MANEJO DE GRID CON PAGINACIÓN*/
+
+.GvMtto
+{
+  width:100%;
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+}
+
+/*Estableciendo el Css para el header 
+  -bordes superiores e inferiores del mismo color de fondo
+  -bordes derecho más obscuro que izquierdo */
+.GvMtto th
+{  
+  padding: 5px 0px 5px 4px;
+  color: #dcdcdc ; 
+  background: #1a2732; 
+  border-top: solid 1px #4d4d4d;
+  border-bottom: solid 1px #4d4d4d;  
+  border-right: solid 1px #6a6969;   
+  border-left: solid 1px #6a6969;   
+  font-size: 14px; 
+  text-align:left;  
+ }
+
+.GvMtto tr.TrMttoInpar
+{
+	background-color: #e3e3e3 ;
+	color: #000000; 
+ }
+ .GvMtto tr.TrMttoInpar:hover, .GvMtto tr.TrMttopar:hover
+{
+	background-color: #cbb5bf;
+	color:#000;    
+	font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+	cursor: pointer;	
+ }
+
+.GvMtto tr.TrMttopar
+{
+	background-color:#f1f1f1;
+	color: #000000;
+	}      
+.GvMtto td
+{ 
+	border: solid 1px #c1c1c1;     
+	height: 18px;
+}
+
+/*Para la paginación*/
+.GvMtto .PagerMtto, .GvLista .PagerMtto
+{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma'; 
+  font-size: 15px;    
+  background-color:#e8e8e8 ;   
+  width:100%;      
+}
+
+/*Css para el div que contendrá el contenido del EmptyDataTemplate*/
+.DvGvEmptyDataTempl{
+width: 100%;
+font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+font-size: 15px;
+/*color: #3d3d3d;*/
+padding: 10px 0px 10px 5px;
+margin: -3px;
+margin-right: 0px;
+background-color: #dedede;
+color:#2e2e2e; 
+border-bottom: 3px solid #636262;  
+border-right: 2px solid #636262;  
+}
+
+/*Css para el div que contendrá el contenido del EmptyDataTemplate*/
+.DvGvEmptyDataTemplInDv{
+width: 100%;
+font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+font-size: 15px;
+/*color: #3d3d3d;*/
+padding: 10px 0px 10px 10px;
+margin: -3px;
+margin-right: 0px;
+background-color: #dedede;
+color:#2e2e2e; 
+border-bottom: 1px solid #636262;  
+border-right: 1px solid #636262;  
+}
+
+._DdlMtto{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+  border: 1px solid #c4c3b2;
+  color: #30302b;
+  background: #f6f4ed;  
+  padding-left: 2px;  
+  font-size: 15px;
+  border-radius: 3px;
+  /*position: relative;  */
+}
+
+._DdlMtto:disabled{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+  border: 1px solid #686765;
+  color: #959594;
+  background: #f6f4ed;
+  padding-left: 2px;  
+  border-radius: 3px;
+  /*position: relative;*/
+  behavior:url(/ssc/SharedCSS/sp/PIE.htc);  
+}
+
+._LabelBusqueda{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';  
+  color: #1c1c1c;    
+  padding-left: 10px;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+._TextBusqueda{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+  border: 1px solid #c4c3b2;
+  color: #86856f;
+  background: #f6f4ed;  
+  padding: 3px 0px 3px 1px;
+  font-size: 15px;
+}
+
+._BtnBusqueda{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+  border: 1px solid #c4c3b2;
+  color: #86856f;
+  background: #f6f4ed;  
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  border-radius: 12px;
+  position: relative;
+  behavior:url(/ssc/SharedCSS/PIE.htc);
+   
+}
+
+._BtnBusqueda:hover{
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+  border: 1px solid #686765;
+  color: #686765;
+  background: #f6f4ed;  
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  behavior:url(/ssc/SharedCSS/sp/PIE.htc);      
+}
+
+._BtnBusqueda:disabled{    
+  font-family: 'CantarellRegular', 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Tahoma';
+  border: 1px solid #939393;  
+  color: #939393;  
+  background: #d7d7d7;  
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 6px;
+  font-size: 15px;
+  border-radius: 10px; 
+  cursor:default; 
+  position: relative;
+  behavior:url(/ssc/SharedCSS/sp/PIE.htc);  
+  }
