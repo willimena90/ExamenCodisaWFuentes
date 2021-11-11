@@ -44,12 +44,7 @@
 
         <!-- javascripts -->
         <script src="js/jquery-1.8.3.min.js"></script>
-
-        <script>
-            $(document).on('ready', function () {
-                $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
-            });
-        </script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
 
         <!-- bootstrap -->
         <script src="js/bootstrap.min.js"></script>
@@ -139,7 +134,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
         <div>
+            
             <section id="container" class="">
 
                 <header class="header dark-bg">
@@ -153,10 +150,15 @@
                     </div>
                 </header>
 
+                  
+
                 <aside>
+
+                    
+
                     <div id="sidebar" class="nav-collapse ">
-                        <ul class="sidebar-menu">
-                            <li class="nav-item dropdown">
+                        <ul class="sidebar-menu" id="topnav">
+                            <%--<li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mtto de Datos
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -165,9 +167,14 @@
                                     <a class="" href="~/Mtto_Empleados/wfDashBoardEmpleado.aspx" runat="server">Mtto Empleados</a>
                                     <a class="" href="~/Mtto_Empleados/wfTreeViewEmpleados.aspx" runat="server">TreeView Empleados</a>
                                 </div>
-                            </li>
+                            </li>--%>
+                        <li><a id="A1" href="~/Mtto_Area/wfDashBoardArea.aspx" runat="server">Mtto Area</a></li>
+                        <li><a id="A2" href="~/Mtto_Empleados/wfDashBoardEmpleado.aspx" runat="server">Mtto Empleados</a></li>
+                          <li><a id="A4" href="~/Mtto_Empleados/wfTreeViewEmpleados.aspx" runat="server">TreeView</a></li>
                         </ul>
                     </div>
+
+                    
 
                 </aside>
 
