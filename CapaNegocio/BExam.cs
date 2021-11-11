@@ -93,5 +93,29 @@ namespace CapaNegocio
         }
 
         #endregion
+
+        #region Mantenimiento de Area
+
+        public DataTable _ObtenerUltimaHabilidad()
+        {
+            return clsDExam._ConsultarUltimaHabilidad();
+        }
+
+        public DataTable _ObtenerHabilidadPorEmpleado(int IdEmpleado)
+        {
+            return clsDExam._ConsultarHabilidadPorEmpleado(IdEmpleado);
+        }
+
+        public void _InsertarHabilidad(int IdEmpleado, string NombreHabilidad)
+        {
+            clsDExam._InsertarHabilidad(IdEmpleado, NombreHabilidad);
+        }
+
+        public void _EliminarHabilidad(int IdHabilidad)
+        {
+            clsDExam._EliminarHabilidad(IdHabilidad);
+        }
+
+        #endregion
     }
 }

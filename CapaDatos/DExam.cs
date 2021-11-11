@@ -103,5 +103,31 @@ namespace CapaDatos
         }
 
         #endregion
+
+        #region Mantenimiento de Habilidades
+
+        public DataTable _ConsultarUltimaHabilidad()
+        {
+            DataTable dt = SqlData._GetDataTable("SELECT COUNT(IdHabilidad) + 1 IdHabilidad FROM Empleado_Habilidad");
+            return dt;
+        }
+
+        public DataTable _ConsultarHabilidadPorEmpleado(int IdEmpleado)
+        {
+            DataTable dt = SqlData._GetDataTable("sp_ConsultaHabilidadPorEmpleado " + IdEmpleado + "");
+            return dt;
+        }
+
+        public void _InsertarHabilidad(int IdEmpleado, string NombreHabilidad)
+        {
+            SqlData._ExecuteSQL("sp_InsertarHabilidad " + IdEmpleado + ",'" + NombreHabilidad + "'");
+        }
+
+        public void _EliminarHabilidad(int IdHabilidad)
+        {
+            SqlData._ExecuteSQL("sp_EliminarArea " + IdHabilidad + "");
+        }
+
+        #endregion
     }
 }
