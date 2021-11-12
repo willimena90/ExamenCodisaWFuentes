@@ -195,39 +195,39 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
         protected global::System.Web.UI.WebControls.TextBox txtIdHabilidadD;
 
         /// <summary>
-        /// Control lblNomHabD.
+        /// Control lblEmpHD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomHabD;
+        protected global::System.Web.UI.WebControls.Label lblEmpHD;
 
         /// <summary>
-        /// Control txtNomHabD.
+        /// Control ddlEmpHabD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomHabD;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEmpHabD;
 
         /// <summary>
-        /// Control lblDescD.
+        /// Control lblHabD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescD;
+        protected global::System.Web.UI.WebControls.Label lblHabD;
 
         /// <summary>
-        /// Control txtDescD.
+        /// Control lstHabD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescD;
+        protected global::System.Web.UI.WebControls.ListBox lstHabD;
     }
 }

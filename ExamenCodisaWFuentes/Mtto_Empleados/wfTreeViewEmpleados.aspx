@@ -154,20 +154,27 @@
                                                 <td style="padding: 5px 0px 0px 0px;">
                                                     <table style="width: 100%; border-collapse: collapse;">
                                                         <tr>
-                                                            <td>
-                                                                <asp:Label ID="lblNomHabD" runat="server" Text="Nombre Habilidad" Width="100%" CssClass="_NormalLabel"></asp:Label>
-                                                                <div style="margin-top: 5px">
-                                                                    <asp:TextBox ID="txtNomHabD" runat="server" Enabled="false" CssClass="form-control font-weight-bold" placeholder="Nombre Habilidad" Width="100%"></asp:TextBox>
-                                                                </div>
+                                                            <td style="padding-top: 10px;" colspan="3">
+                                                                <asp:Label ID="lblEmpHD" runat="server" Text="Empleado" Width="100%" CssClass="_NormalLabel"></asp:Label>
+                                                                <asp:DropDownList ID="ddlEmpHabD" runat="server" CssClass="form-control" Width="100%" DataTextField="NombreCompleto"
+                                                                    DataValueField="IdEmpleado" Enabled="false">
+                                                                </asp:DropDownList>
                                                             </td>
-                                                            <td>
-                                                                <asp:Label ID="lblDescD" runat="server" Text="Descripción Area" Width="100%" CssClass="_NormalLabel"></asp:Label>
-                                                                <div style="margin-top: 5px">
-                                                                    <asp:TextBox ID="txtDescD" runat="server" Enabled="false" CssClass="form-control font-weight-bold" placeholder="Descripción Area" Width="100%"></asp:TextBox>
-                                                                </div>
-                                                            </td>
+                                                
+                                            
                                                         </tr>
                                                     </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    <div style="margin-top: 5px">
+                                                        <asp:Label ID="lblHabD" runat="server" Text="Habilidades de Empleado" Width="100%" CssClass="_NormalLabel"></asp:Label>
+                                                        <asp:ListBox ID="lstHabD" runat="server" Width="100%"></asp:ListBox>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>

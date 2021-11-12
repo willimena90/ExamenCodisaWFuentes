@@ -32,6 +32,12 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
             ddlEmpleadoI.DataBind();
         }
 
+        private void _PopulateDdlEmpleadoD()
+        {
+            ddlEmpHabD.DataSource = clsBExam._ObtenerJefeDdl();
+            ddlEmpHabD.DataBind();
+        }
+
         protected DataTable _GetUltimoIDHabilidad()
         {
             var dt = clsBExam._ObtenerUltimaHabilidad();
@@ -84,7 +90,7 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
 
         protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
         {
-            //_PopulateDdlEmpleado();
+            _PopulateDdlEmpleadoD();
 
             string message = "$('#modalAreaD').modal({ backdrop: 'static', keyboard: false, show: true });";
             Page.ClientScript.RegisterStartupScript(this.GetType(), "openModal", message, true);
@@ -97,14 +103,15 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
             DataTable dtHabilidades = new DataTable();
             dtHabilidades = clsBExam._ObtenerHabilidadPorEmpleado(Cliente);
 
+            txtIdHabilidadD.Text = dtHabilidades.Rows[0]["IdHabilidad"].ToString();
+            ddlEmpHabD.SelectedValue = dtHabilidades.Rows[0]["IdEmpleado"].ToString();
 
-
-
-
-
-
-            //txtNomAreaD.Text = ValueNode.Text;           
-            txtDescD.Text = TreeView1.SelectedNode.Text;
+            for (int i = 0; i < dtHabilidades.Rows.Count; i++)
+            {
+                ListItem item = new ListItem();
+                item.Text = dtHabilidades.Rows[0]["NombreHabilidad"].ToString();
+                lstHabD.Items.Add(item.Text);
+            }
         }
 
         protected void btnAddHabilidad_Click(object sender, ImageClickEventArgs e)
