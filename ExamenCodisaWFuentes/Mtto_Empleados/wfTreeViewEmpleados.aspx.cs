@@ -105,12 +105,10 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
 
             txtIdHabilidadD.Text = dtHabilidades.Rows[0]["IdHabilidad"].ToString();
             ddlEmpHabD.SelectedValue = dtHabilidades.Rows[0]["IdEmpleado"].ToString();
-
+            
             for (int i = 0; i < dtHabilidades.Rows.Count; i++)
             {
-                ListItem item = new ListItem();
-                item.Text = dtHabilidades.Rows[0]["NombreHabilidad"].ToString();
-                lstHabD.Items.Add(item.Text);
+                lstHabD.Items.Add(dtHabilidades.Rows[i][11].ToString());
             }
         }
 
