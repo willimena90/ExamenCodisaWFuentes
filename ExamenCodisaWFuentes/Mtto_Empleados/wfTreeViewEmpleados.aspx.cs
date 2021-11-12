@@ -61,30 +61,24 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
             DataSet ds = new DataSet();
             ds.Tables.Add(dt);
 
+            ds.Relations.Add("ChildRows", ds.Tables[0].Columns["IdEmpleado"], ds.Tables[0].Columns["IdJefe"]);
+
             foreach (DataRow level1DataRow in ds.Tables[0].Rows)
             {
                 TreeNode parentTreeNode = new TreeNode();
                 parentTreeNode.Text = level1DataRow["NombreCompleto"].ToString();
-                parentTreeNode.Value = level1DataRow["IdJefe"].ToString();
-                GetChildRows(level1DataRow, parentTreeNode);
-                TreeView1.Nodes.Add(parentTreeNode);
-            }
-        }
+                parentTreeNode.Value = level1DataRow["IdEmpleado"].ToString();
 
-        private void GetChildRows(DataRow dataRow, TreeNode treeNode)
-        {
-            DataRow[] childRows = dataRow.GetChildRows("ChildRows");
-            foreach (DataRow row in childRows)
-            {
-                TreeNode childTreeNode = new TreeNode();
-                childTreeNode.Text = row["NombreCompleto"].ToString();
-                childTreeNode.Value = row["IdEmpleado"].ToString();
-                treeNode.ChildNodes.Add(childTreeNode);
+                DataRow[] childRows = level1DataRow.GetChildRows("ChildRows");
 
-                if (Convert.ToBoolean(row.GetChildRows("ChildRows").Length))
+                foreach (DataRow level2DataRow in childRows)
                 {
-                    GetChildRows(row, childTreeNode);
+                    TreeNode childTreeNode = new TreeNode();
+                    childTreeNode.Text = level2DataRow["NombreCompleto"].ToString();
+                    childTreeNode.Value = level2DataRow["IdEmpleado"].ToString();
+                    parentTreeNode.ChildNodes.Add(childTreeNode);
                 }
+                TreeView1.Nodes.Add(parentTreeNode);
             }
         }
 

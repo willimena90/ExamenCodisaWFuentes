@@ -32,7 +32,7 @@
             <%--<asp:ImageButton ID="btnRefresh" ImageUrl="~/images/Reload.gif" ToolTip="Actualizar Datos" CssClass="myClass" runat="server" OnClick="btnRefresh_Click" />--%>
             <br />
             <br />
-            <asp:TreeView ID="TreeView1" ShowExpandCollapse="true" ShowCheckBoxes="Root" ShowLines="true" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged"></asp:TreeView>
+            <asp:TreeView ID="TreeView1" ShowExpandCollapse="true" ShowLines="true" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged"></asp:TreeView>
         </div>
 
     </div>
