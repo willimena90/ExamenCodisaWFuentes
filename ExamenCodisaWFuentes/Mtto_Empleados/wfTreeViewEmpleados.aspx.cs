@@ -143,7 +143,7 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
                     dvError.Visible = false;
                     ddlEmpleadoI.BackColor = (Color)new ColorConverter().ConvertFromString("#ffe0e6");
                 }
-                else if (lstHabI.Text == "")
+                else if (lstHabI.Items.Count == 0)
                 {
                     dvRequerido.Visible = true;
                     dvSucess.Visible = false;
@@ -193,8 +193,19 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
             string message = "$('#modalHabilidadI').modal({ backdrop: 'static', keyboard: false, show: true });";
             Page.ClientScript.RegisterStartupScript(this.GetType(), "openModal", message, true);
 
-            lstHabI.Items.Add(txtDescHabI.Text);
-            txtDescHabI.Text = "";
+            string Mensaje = "La Habilidad: " + txtDescHabI.Text + "... Ya Existe en la Lista de Habilidades.";
+
+            ListItem litem = new ListItem(txtDescHabI.Text);
+
+            if ((lstHabI.Items.Contains(litem) == true))
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + Mensaje + "')", true);
+            }
+            else
+            {
+                lstHabI.Items.Add(txtDescHabI.Text);
+                txtDescHabI.Text = "";
+            }            
         }
     }
 }
