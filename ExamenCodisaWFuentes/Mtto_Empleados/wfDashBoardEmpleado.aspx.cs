@@ -493,8 +493,6 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
         {
             txtFechNacI.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFechIngI.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
-
         }
     }
 }
