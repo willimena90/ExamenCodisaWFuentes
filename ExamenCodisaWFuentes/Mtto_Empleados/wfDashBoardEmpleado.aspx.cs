@@ -303,15 +303,15 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
                 ddlJefeU.SelectedValue = dtEmpleado.Rows[0]["IdJefe"].ToString();
                 ddlAreaU.SelectedValue = dtEmpleado.Rows[0]["IdArea"].ToString();
 
-                int EdadReal = CalcYears(DateTime.ParseExact(txtFechNacU.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-                lblFechaEdaU.Text = Convert.ToString(EdadReal);
-
-                int EdadEmpresa = CalcYears(DateTime.ParseExact(txtFechIngU.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture));
-                lblFechInU.Text = Convert.ToString(EdadEmpresa);
-
                 ClientScript.RegisterStartupScript(this.GetType(), "Popup", "$('#modalEmpleadoU').modal('show')", true);
                 txtBuscaEmpleado.Text = "";
             }
+
+            int EdadReal = CalcYears(DateTime.ParseExact(txtFechNacU.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture));
+            lblFechaEdaU.Text = Convert.ToString(EdadReal);
+
+            int EdadEmpresa = CalcYears(DateTime.ParseExact(txtFechIngU.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture));
+            lblFechInU.Text = Convert.ToString(EdadEmpresa);
         }
 
         protected void BtnSaveEmpleU_Click(object sender, EventArgs e)
