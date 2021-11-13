@@ -114,7 +114,15 @@ namespace CapaDatos
 
         public DataTable _ConsultarHabilidadPorEmpleado(int IdEmpleado)
         {
-            DataTable dt = SqlData._GetDataTable("sp_ConsultaHabilidadPorEmpleado " + IdEmpleado + "");
+            DataTable dt = SqlData._GetDataTable("SELECT " +
+                                                 "E.IdEmpleado, " +
+                                                 "E.NombreCompleto, " +
+                                                 "EH.IdHabilidad, " +
+                                                 "EH.NombreHabilidad " +
+                                                 "FROM Empleado_Habilidad EH " +
+                                                 "INNER JOIN Empleado E ON EH.IdEmpleado = E.IdEmpleado " +
+                                                 "WHERE E.IdEmpleado = " + IdEmpleado + "" +
+                                                 "ORDER BY EH.IdHabilidad");
             return dt;
         }
 

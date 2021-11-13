@@ -84,25 +84,36 @@ namespace ExamenCodisaWFuentes.Mtto_Empleados
 
         protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
         {
-            _PopulateDdlEmpleadoD();
-
-            string message = "$('#modalAreaD').modal({ backdrop: 'static', keyboard: false, show: true });";
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "openModal", message, true);
+            _PopulateDdlEmpleadoD();            
 
             TreeNode ValueNode = new TreeNode();
             int Cliente = 0;
             ValueNode.Text = TreeView1.SelectedValue.ToString();
+            string EmpleadoSelected = TreeView1.SelectedNode.Text;
             Cliente = Convert.ToInt32(ValueNode.Text);
 
             DataTable dtHabilidades = new DataTable();
             dtHabilidades = clsBExam._ObtenerHabilidadPorEmpleado(Cliente);
 
-            txtIdHabilidadD.Text = dtHabilidades.Rows[0]["IdHabilidad"].ToString();
-            ddlEmpHabD.SelectedValue = dtHabilidades.Rows[0]["IdEmpleado"].ToString();
-            
-            for (int i = 0; i < dtHabilidades.Rows.Count; i++)
+            if (dtHabilidades.Rows.Count > 0)
             {
-                lstHabD.Items.Add(dtHabilidades.Rows[i][11].ToString());
+                lstHabD.Items.Clear();
+
+                string message = "$('#modalAreaD').modal({ backdrop: 'static', keyboard: false, show: true });";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "openModal", message, true);
+
+                ddlEmpHabD.SelectedValue = dtHabilidades.Rows[0]["IdEmpleado"].ToString();
+                txtIdHabilidadD.Text = dtHabilidades.Rows[0]["IdHabilidad"].ToString();              
+
+                for (int i = 0; i < dtHabilidades.Rows.Count; i++)
+                {
+                    lstHabD.Items.Add(dtHabilidades.Rows[i][3].ToString());
+                }
+            }
+            else
+            {
+                string Mensaje = "No se encontró Habilidad para el Empleado: " + EmpleadoSelected + "...";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + Mensaje + "')", true);
             }
         }
 
